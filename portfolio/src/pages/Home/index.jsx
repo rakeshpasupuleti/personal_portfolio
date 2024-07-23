@@ -5,17 +5,22 @@ import { Link } from "react-router-dom";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 
-const resumeUrl =
-  "https://drive.google.com/file/d/12ENqbuyeCHa7T-3A1P4mMpklFPJw2t4C/view?usp=sharing";
+// Direct URL to the resume file hosted in the public directory
+const resumeUrl = "/resume.pdf";
 
 // Function to handle resume download
 const handleDownload = () => {
-  window.open(resumeUrl, "_blank");
+  const link = document.createElement('a');
+  link.href = resumeUrl;
+  link.download = 'Rakesh_Pasupuleti_Resume.pdf'; 
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center  h-screen " style={{ paddingTop: "8.5rem" }}>
+    <div className="flex flex-col items-center h-11/12">
       <h1 className="text-3xl font-bold mb-4">
         Hey{" "}
         <span className="inline-block items-center">
@@ -24,17 +29,20 @@ export default function Home() {
         , Welcome to the Website
       </h1>
       <h1 className="text-4xl font-bold mb-5">This is Rakesh Pasupuleti</h1>
-      <div className="typewriter-container text-4xl font-bold mb-4">
-        <Typewriter
-          options={{
-            strings: ["I am a Software Developer"],
-            autoStart: true,
-            loop: true,
-          }}
-        />
+      <div className="typewriter-container text-4xl font-bold mb-4 flex items-center">
+        <span>I am a&nbsp;</span>
+        <div className="inline-block">
+          <Typewriter
+            options={{
+              strings: ["Software Developer", "Machine learning Engineer", "Curious Learner"],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+        </div>
       </div>
 
-      <div className="flex flex-row gap-6 justify-center mt-6 ">
+      <div className="flex flex-row gap-6 justify-center mt-6">
         <button
           className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
           onClick={handleDownload}
