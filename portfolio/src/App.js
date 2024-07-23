@@ -1,8 +1,8 @@
 import Navbar from './components/Navbar';
-import {  BrowserRouter,Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home'
 import About from './pages/about';
-import Portfolio from './pages/projects';
+
 import Contact from './pages/contact';
 import Education from './pages/education';
 import Experience from './pages/experience';
@@ -11,7 +11,7 @@ import Projects from './pages/projects';
 function App() {
   return (
     <div className="bg-gray-800 min-h-screen min-w-screen text-white flex flex-col">
-      <BrowserRouter>
+      <Router>
         <Navbar />
         <div className="flex-grow flex flex-col justify-center items-center">
           <Routes>
@@ -22,9 +22,10 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/skills" element={<Skills />} />
+            <Route path="*" element={<Navigate to="/" />} /> {/* Redirect undefined routes to home */}
           </Routes>
         </div>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
