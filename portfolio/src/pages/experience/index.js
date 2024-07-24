@@ -32,34 +32,33 @@ export default function Experience() {
   ];
 
   return (
-    <div className="flex flex-col items-center h-11/12 w-11/12 p-5 text-white">
-      <h1 className="text-4xl font-bold mb-8">Work Experience</h1>
+    <div className="flex flex-col items-center h-full min-h-screen w-full p-5 text-white">
+      <h1 className="text-3xl md:text-4xl font-bold mb-8">Work Experience</h1>
       <div className="w-full max-w-4xl">
         {workExperienceData.map((work, index) => (
           <div
             key={index}
-            className="bg-gray-700 p-6 rounded-lg mb-6 shadow-lg"
+            className="bg-gray-700 p-6 md:p-8 rounded-lg mb-6 shadow-lg"
           >
-            <div className="flex flex-row justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold flex items-center">
-                <FaBriefcase className="mr-2" />
-                {work.position}
-              </h2>
-              <p className=" flex items-center">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+              <div className="flex flex-col md:w-3/4  md:mb-0">
+                <h2 className="text-2xl font-semibold flex items-center mb-2">
+                  <FaBriefcase className="mr-2" />
+                  {work.position}
+                </h2>
+                <h3 className="text-xl font-medium flex items-center mb-2 ">
+                  <FaBuilding className="mr-3" />
+                  {work.company}
+                </h3>
+              </div>
+              <p className="flex items-center text-lg md:text-md">
                 <FaCalendarAlt className="mr-2" />
                 {work.duration}
               </p>
             </div>
 
-            <div className="flex flex-row justify-between items-center mb-2">
-              <h3 className="text-xl font-medium mb-1 flex items-center">
-                <FaBuilding className="mr-3" />
-                {work.company}
-              </h3>
-            </div>
-
             <p className="text-md mb-2">{work.description}</p>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside text-sm md:text-base">
               {work.responsibilities.map((responsibility, respIndex) => (
                 <li key={respIndex}>{responsibility}</li>
               ))}

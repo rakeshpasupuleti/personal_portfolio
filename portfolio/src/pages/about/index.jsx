@@ -4,14 +4,14 @@ import { SiHiveBlockchain } from "react-icons/si";
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center p-5 bg-gray-800 text-white  h-11/12">
-      <h1 className="text-4xl font-bold mb-7 text-center">About Me</h1>
+    <div className="flex flex-col items-center p-5 bg-gray-800 text-white h-full min-h-screen">
+      <h1 className="text-3xl md:text-4xl font-bold mb-7 text-center">About Me</h1>
       <div className="w-full max-w-4xl">
-        <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
+        <div className="bg-gray-700 p-6 md:p-10 rounded-lg shadow-lg">
           {/* Introduction Section */}
           <div className="mb-6">
-            <h2 className="text-3xl font-semibold mb-4">Introduction</h2>
-            <p className="text-lg">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Introduction</h2>
+            <p className="text-base md:text-lg">
               I am a software developer with over 3 years of experience and a Master’s degree in Computer Science. 
               My expertise lies in software development and machine learning, with a proven track record of developing real-time applications. 
               I am passionate about leveraging cutting-edge technologies to simplify complex problems and improve people's lives. 
@@ -21,8 +21,8 @@ export default function About() {
 
           {/* Areas of Interest Section */}
           <div>
-            <h2 className="text-3xl font-semibold mb-4">Areas of Interest</h2>
-            <div className="grid grid-cols-2 gap-4">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Areas of Interest</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <button className="bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 text-white font-bold py-3 px-6 rounded-lg flex items-center transition-transform transform hover:scale-105">
                 <FaCog className="mr-3 text-2xl" />
                 <span>Software Development</span>
@@ -46,4 +46,3 @@ export default function About() {
     </div>
   );
 }
-    

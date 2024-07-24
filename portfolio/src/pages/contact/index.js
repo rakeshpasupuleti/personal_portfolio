@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaLinkedin, FaInstagram, FaGithub, FaMobileAlt,FaHandshake  } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaGithub, FaMobileAlt, FaHandshake } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
 
 import emailjs from "emailjs-com";
@@ -72,59 +72,60 @@ export default function Contact() {
   }
 
   return (
-    <div className="flex flex-row gap-10 h-11/12 w-11/12 p-5 overflow-y-scroll:hide">
+    <div className="flex flex-col lg:flex-row gap-10 p-5 w-full max-w-screen-xl mx-auto bg-gray-800 text-white">
       {/* Left half: Social Media */}
-      <div className="w-4/12 flex flex-col items-center  text-white m-5 pt-7 ">
-        <div className="flex flex-row ">
-        <h1 className="text-5xl mb-8 ">Let's Connect</h1><FaHandshake  className="text-6xl  ml-4  mb-8 "/>
+      <div className="flex flex-col items-center lg:items-start text-white w-full lg:w-1/2 mb-8 lg:mb-0">
+        <div className="flex items-center mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold mr-4">Let's Connect</h1>
+          <FaHandshake className="text-5xl lg:text-6xl" />
         </div>
-        <div className="socialmedia flex flex-col gap-5 items-left">
-          <a href="tel:7167047640" className="flex items-center gap-2 text-2xl">
-            <FaMobileAlt className="text-3xl hover:cursor-pointer" />
+        <div className="flex flex-col gap-4 text-lg">
+          <a href="tel:7167047640" className="flex items-center gap-2">
+            <FaMobileAlt className="text-3xl hover:text-blue-400" />
             716-704-7640
           </a>
           <a
             href="mailto:rakeshpasupuleti550@gmail.com"
-            className="flex items-center gap-2 text-2xl"
+            className="flex items-center gap-2"
           >
-            <TfiEmail className="text-3xl hover:cursor-pointer" />
+            <TfiEmail className="text-3xl hover:text-blue-400" />
             rakeshpasupuleti550@gmail.com
           </a>
           <a
             href="https://github.com/rakeshpasupuleti"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-2xl"
+            className="flex items-center gap-2"
           >
-            <FaGithub className="text-3xl hover:cursor-pointer" />
-            Github
+            <FaGithub className="text-3xl hover:text-blue-400" />
+            GitHub
           </a>
           <a
             href="https://www.linkedin.com/in/rakeshpasupuleti"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-2xl"
+            className="flex items-center gap-2"
           >
-            <FaLinkedin className="text-3xl hover:cursor-pointer" />
+            <FaLinkedin className="text-3xl hover:text-blue-400" />
             LinkedIn
           </a>
           <a
             href="https://www.instagram.com/rakesh_pasupuleti27/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-2xl"
+            className="flex items-center gap-2"
           >
-            <FaInstagram className="text-3xl hover:cursor-pointer" />
+            <FaInstagram className="text-3xl hover:text-blue-400" />
             Instagram
           </a>
         </div>
       </div>
 
       {/* Right half: Contact Form */}
-      <div className="w-1/2 flex flex-col items-center text-white m-5 pt-8">
+      <div className="w-full lg:w-1/2">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-7 w-full max-w-md"
+          className="flex flex-col gap-6 bg-gray-700 p-6 rounded-lg w-full max-w-md mx-auto"
         >
           <label className="flex flex-col">
             <input
@@ -133,10 +134,10 @@ export default function Contact() {
               value={name}
               placeholder="Enter Your Name..."
               onChange={(event) => setName(event.target.value)}
-              className="p-2 rounded text-black bg-white"
+              className="p-3 rounded text-black bg-white"
             />
             {errors.name && (
-              <span className="text-white-500">{errors.name}</span>
+              <span className="text-red-500 text-sm">{errors.name}</span>
             )}
           </label>
           <label className="flex flex-col">
@@ -146,10 +147,10 @@ export default function Contact() {
               value={email}
               placeholder="Enter Your Email..."
               onChange={(event) => setEmail(event.target.value)}
-              className="p-2 rounded text-black bg-white"
+              className="p-3 rounded text-black bg-white"
             />
             {errors.email && (
-              <span className="text-white-500">{errors.email}</span>
+              <span className="text-red-500 text-sm">{errors.email}</span>
             )}
           </label>
           <label className="flex flex-col">
@@ -159,10 +160,10 @@ export default function Contact() {
               placeholder="Enter Subject..."
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
-              className="p-2 rounded text-black bg-white"
+              className="p-3 rounded text-black bg-white"
             />
             {errors.subject && (
-              <span className="text-white-500">{errors.subject}</span>
+              <span className="text-red-500 text-sm">{errors.subject}</span>
             )}
           </label>
           <label className="flex flex-col">
@@ -171,15 +172,15 @@ export default function Contact() {
               value={message}
               placeholder="Enter Your Message..."
               onChange={(e) => setMessage(e.target.value)}
-              className="p-2 rounded h-32 text-black bg-white resize-none"
+              className="p-3 rounded h-32 text-black bg-white resize-none"
             />
             {errors.message && (
-              <span className="text-white-500">{errors.message}</span>
+              <span className="text-red-500 text-sm">{errors.message}</span>
             )}
           </label>
           <button
             type="submit"
-            className="bg-gray-600 text-white p-2 rounded mt-4 hover:bg-gray-700"
+            className="bg-gray-600 text-white p-3 rounded hover:bg-gray-700"
           >
             Send Email
           </button>

@@ -20,16 +20,18 @@ const handleDownload = () => {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center h-11/12">
-      <h1 className="text-3xl font-bold mb-4">
+    <div className="flex flex-col items-center h-11/12 p-4 md:p-8">
+      <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">
         Hey{" "}
         <span className="inline-block items-center">
           <PiHandWavingFill />
-        </span>{" "}
+        </span>
         , Welcome to the Website
       </h1>
-      <h1 className="text-4xl font-bold mb-5">This is Rakesh Pasupuleti</h1>
-      <div className="typewriter-container text-4xl font-bold mb-4 flex items-center">
+      <h1 className="text-2xl md:text-4xl font-bold mb-5 text-center">
+        This is Rakesh Pasupuleti
+      </h1>
+      <div className="typewriter-container text-xl md:text-3xl lg:text-4xl font-bold mb-4 flex flex-col md:flex-row items-center">
         <span>I am a&nbsp;</span>
         <div className="inline-block">
           <Typewriter
@@ -42,20 +44,20 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-row gap-6 justify-center mt-6">
+      <div className="flex flex-col md:flex-row gap-4 justify-center mt-6">
         <button
-          className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center"
           onClick={handleDownload}
         >
-          Download Resume{" "}
+           Resume
           <span className="inline-block ml-2">
-            <MdOutlineFileDownload className="inline-block text-xl" />
+            <MdOutlineFileDownload className="text-xl" />
           </span>
         </button>
 
         <Link to="/contact" className="inline-block">
-          <button className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-            Contact
+          <button className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center">
+            Lets Connect !
           </button>
         </Link>
       </div>

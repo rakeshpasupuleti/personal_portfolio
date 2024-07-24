@@ -48,37 +48,37 @@ export default function Education() {
   ];
 
   return (
-    <div className="flex flex-col items-center h-11/12 w-11/12 p-5 text-white">
-      <h1 className="text-4xl font-bold mb-8">Education</h1>
+    <div className="flex flex-col items-center h-full min-h-screen w-full p-5 text-white">
+      <h1 className="text-3xl md:text-4xl font-bold mb-8">Education</h1>
       <div className="w-full max-w-4xl">
         {educationData.map((edu, index) => (
           <div
             key={index}
-            className="bg-gray-700 p-6 rounded-lg mb-6 shadow-lg"
+            className="bg-gray-700 p-6 md:p-10 rounded-lg mb-6 shadow-lg"
           >
-            <div className="flex flex-row justify-between items-center mb-2">
-              <h2 className="text-2xl font-semibold flex items-center">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+              <h2 className="text-2xl font-semibold flex items-center mb-2 md:mb-0 text-xl ">
                 <FaUserGraduate className="mr-2" />
                 {edu.degree}
               </h2>
-              <p className="flex items-center">
+              <p className="flex items-center text-lg">
                 <FaCalendarAlt className="mr-2" />
                 {edu.duration}
               </p>
             </div>
 
-            <div className="flex flex-row justify-between items-center mb-2">
-              <h3 className="text-xl font-medium mb-1 flex items-center">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+              <h3 className="text-xl font-medium mb-2 md:mb-0 flex items-center">
                 <FaUniversity className="mr-3" />
                 {edu.institution}
               </h3>
-              <p className="flex items-center">
+              <p className="flex items-center text-lg">
                 GPA: {edu.gpaobtained} / {edu.gpagrand}
               </p>
             </div>
-            
-            <p className="text-md mb-2">{edu.description}</p>
-            <ul className="list-disc list-inside">
+
+            <p className="text-md mb-4">{edu.description}</p>
+            <ul className="list-disc list-inside text-sm md:text-base">
               {edu.coursework.map((course, courseIndex) => (
                 <li key={courseIndex}>{course}</li>
               ))}

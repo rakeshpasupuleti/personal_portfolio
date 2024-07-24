@@ -82,49 +82,47 @@ export default function Projects() {
   return (
     <div className="flex flex-col items-center p-5 bg-gray-800 text-white min-h-screen">
       <h1 className="text-5xl font-bold mb-12 text-center">Projects</h1>
-      <div className="w-full max-w-4xl">
+      <div className="w-full max-w-6xl">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gray-700 p-6 rounded-lg mb-8 shadow-lg"
+            className="bg-gray-700 p-6 rounded-lg mb-8 shadow-lg flex flex-col lg:flex-row"
           >
-            <div className="flex items-start mb-4">
-              <div className="flex items-center justify-center w-24 h-24 bg-gray-600 rounded-full border-4 border-gray-600 mr-4 flex-shrink-0">
-                {project.icon}
+            <div className="flex items-center justify-center w-24 h-24 bg-gray-600 rounded-full border-4 border-gray-600 mb-4 lg:mb-0 lg:mr-6 flex-shrink-0  ">
+              {project.icon}
+            </div>
+            <div className="flex flex-col flex-grow">
+              <div className="flex items-center justify-between mb-2">
+                <h2 className="text-3xl font-semibold pr-4">{project.title}</h2>
               </div>
-              <div className="flex flex-col flex-grow">
-                <div className="flex items-center justify-between mb-2">
-                  <h2 className="text-3xl font-semibold pr-4">{project.title}</h2>
-                </div>
-                <p className="text-sm text-gray-400 mb-4">{project.description}</p>
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <button
-                      key={techIndex}
-                      className="bg-gray-600 text-white py-1 px-4 rounded"
-                    >
-                      {tech}
-                    </button>
-                  ))}
-                </div>
-                <div className="flex space-x-4">
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-blue-400"
+              <p className="text-sm text-gray-400 mb-4">{project.description}</p>
+              <div className="mb-4 flex flex-wrap gap-2">
+                {project.technologies.map((tech, techIndex) => (
+                  <button
+                    key={techIndex}
+                    className="bg-gray-600 text-white py-1 px-4 rounded text-sm"
                   >
-                    <FaGithub className="mr-1" /> GitHub
-                  </a>
-                  <a
-                    href={project.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-blue-400"
-                  >
-                    <FaExternalLinkAlt className="mr-1" /> Demo
-                  </a>
-                </div>
+                    {tech}
+                  </button>
+                ))}
+              </div>
+              <div className="flex space-x-4 text-sm">
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-blue-400 hover:underline"
+                >
+                  <FaGithub className="mr-1" /> GitHub
+                </a>
+                <a
+                  href={project.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-blue-400 hover:underline"
+                >
+                  <FaExternalLinkAlt className="mr-1" /> Demo
+                </a>
               </div>
             </div>
           </div>
