@@ -74,8 +74,8 @@ export default function Contact() {
   return (
     <div className="flex flex-col lg:flex-row gap-10 p-5 w-full max-w-screen-xl mx-auto bg-gray-800 text-white">
       {/* Left half: Social Media */}
-      <div className="flex flex-col items-center lg:items-start text-white w-full lg:w-1/2 mb-8 lg:mb-0">
-        <div className="flex items-center mb-6">
+      <div className="flex flex-col items-center p-10 m-5 lg:items-start text-white w-full lg:w-1/2 mb-8 lg:mb-0">
+        <div className="flex items-center mb-6 ">
           <h1 className="text-4xl lg:text-5xl font-bold mr-4">Let's Connect</h1>
           <FaHandshake className="text-5xl lg:text-6xl" />
         </div>

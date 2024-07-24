@@ -3,6 +3,22 @@ import { FaBriefcase, FaBuilding, FaCalendarAlt } from "react-icons/fa";
 
 export default function Experience() {
   const workExperienceData = [
+    {
+      position: "Software Developer",
+      company: "Freelancing",
+      duration: "July 2020 - Present",
+      description:
+        "Experienced in developing and optimizing web applications and backend solutions, and implementing AI/ML models to enhance business processes.",
+      responsibilities: [
+        "Developed and maintained responsive web applications for various clients using React.js, JavaScript, and HTML/CSS, ensuring cross-browser compatibility and enhancing user experience.",
+        "Enhanced the performance and functionality of client web applications through the optimization of frontend code, reducing load times by 30% and increasing user engagement by 20%.",
+        "Collaborated with clients to design, develop, and implement scalable backend solutions using SQL databases, improving data retrieval efficiency and system performance.",
+        "Created and optimized SQL queries, stored procedures, and triggers to manage and manipulate large datasets for clients, leading to a 20% increase in query performance.",
+        "Implemented RESTful APIs to facilitate seamless communication between frontend and backend systems, resulting in a more cohesive and functional application architecture for clients.",
+        "Designed and deployed machine learning models that improved predictive accuracy by 18%, resulting in more efficient decision-making processes for clients.",
+        "Leveraged AI techniques to automate data analysis tasks, reducing processing time by 40% and enabling faster insights for businesses.",
+      ],
+    },
     // {
     //   position: "Software Developer",
     //   company: "Tech Solutions Inc.",
@@ -58,9 +74,13 @@ export default function Experience() {
             </div>
 
             <p className="text-md mb-2">{work.description}</p>
-            <ul className="list-disc list-inside text-sm md:text-base">
+            <ul className="list-disc pl-6 text-sm md:text-base">
               {work.responsibilities.map((responsibility, respIndex) => (
-                <li key={respIndex}>{responsibility}</li>
+                <li key={respIndex} className="ml-[-20px]  pb-1">
+                  {" "}
+                  
+                  {responsibility}
+                </li>
               ))}
             </ul>
           </div>
@@ -69,3 +89,9 @@ export default function Experience() {
     </div>
   );
 }
+
+// Developed and maintained responsive web applications using React.js, JavaScript, and HTML/CSS, ensuring cross-browser compatibility and enhancing user experience.
+// Enhanced the performance and functionality of the web application through the optimization of frontend code, reducing load times by 30% and increasing user engagement by 20%.
+// Collaborated with cross-functional teams to design, develop, and implement scalable backend solutions using SQL databases, improving data retrieval efficiency and system performance.
+// Created and optimized SQL queries, stored procedures, and triggers to manage and manipulate large datasets, leading to a 20% increase in query performance.
+// Implemented RESTful APIs to facilitate seamless communication between frontend and backend systems, resulting in a more cohesive and functional application architecture.
