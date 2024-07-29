@@ -393,7 +393,7 @@ export default function Skills() {
   const profiles = [
     {
       name: "LeetCode",
-      url: "https://leetcode.com/your-profile",
+      url: "https://leetcode.com/Rakeshpa/",
       icon: <SiLeetcode className="mr-2" />
     },
     {
