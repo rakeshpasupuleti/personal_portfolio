@@ -26,7 +26,7 @@ export default function Home() {
         <span className="inline-block items-center">
           <PiHandWavingFill />
         </span>
-        , Welcome to the Website
+        , Welcome
       </h1>
       <h1 className="text-2xl md:text-4xl font-bold mb-5 text-center">
         This is Rakesh Pasupuleti
