@@ -6,7 +6,8 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 
 // Direct URL to the resume file hosted in the public directory
-const resumeUrl = "/resume.pdf";
+const resumeUrl = "https://rakeshpasupuleti.github.io/personal_portfolio/resume.pdf";
+
 
 // Function to handle resume download
 const handleDownload = () => {
